@@ -11,12 +11,10 @@ do {
     numbers.push(userInput);
 
 } while (true);
+if (numbers.length) {
+  for (let i = 0; i < numbers.length; i += 1) {
+      	total += +numbers[i];
+  	};
 
-for (var i = 0; i < numbers.length; i++) {
- numbers[i]
-};
-
-for (let i = 0; i < numbers.length; i += 1) {
-    total += +numbers[i];
-};
-alert(`Загальна сума дорівнює ${total}`);
+  	alert(`Загальна сума дорівнює ${total}`);
+  };
