@@ -36,17 +36,21 @@ const logins = ["Mango", "robotGoogles", "Poly", "Aj4x1sBozz", "qwerty123"];
 let login = prompt('Введіть новий логін' , '')
 
 const isLoginValid = (login) => {
-  alert('ПОМИЛКА! Логін має бути від 4 до 16 символів!');
   return (login.length < 4 || login.length > 16);
 };
 
 
 const isLoginUnique = (allLogins, login) => {
-  alert('Такий логін вже використовується!');
   return (allLogins.includes(login));
 };
 
 const addLogin = (login) => {
+  If(!loginLength) {
+    alert('ПОМИЛКА! Логін має бути від 4 до 16 символів!');
+  return;}
+If(!loginUnique) {
+  alert('Такий логін вже використовується!');
+  return;}
   logins.push(login);
   alert('Ваш логін внесено!');
 return (isLoginValid(login) && isLoginUnique(login, logins))
