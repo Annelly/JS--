@@ -45,10 +45,10 @@ const isLoginUnique = (allLogins, login) => {
 };
 
 const addLogin = (login) => {
-  If(!loginLength) {
+  if(!loginLength) {
     alert('ПОМИЛКА! Логін має бути від 4 до 16 символів!');
   return;}
-If(!loginUnique) {
+if(!loginUnique) {
   alert('Такий логін вже використовується!');
   return;}
   logins.push(login);
