@@ -1,4 +1,3 @@
-
 /*
   Есть массив logins с логинами пользователей. Напишите скрипт добавления логина в массив logins.
   Добавляемый логин должен:
@@ -33,33 +32,33 @@
 */
 "use strict"
 const logins = ["Mango", "robotGoogles", "Poly", "Aj4x1sBozz", "qwerty123"];
-let login = prompt('Введіть новий логін' , '')
+let login = prompt('Введіть новий логін', '');
 
 const isLoginValid = (login) => {
-  return (login.length < 4 || login.length > 16);
+    return login.length >= 4 && login.length <= 16;
 };
 
 
 const isLoginUnique = (allLogins, login) => {
-  return (allLogins.includes(login));
+  console.log();
+    return (allLogins.includes(login));
 };
 
 const addLogin = (login) => {
-  if (!isLoginValid) {
-    alert('ПОМИЛКА! Логін має бути від 4 до 16 символів!');
-  return;
-};
-  if (!isLoginUnique) {
-  alert('Такий логін вже використовується!');
-  return;
-};
-  logins.push(login);
-  alert('Ваш логін внесено!');
-return (isLoginValid(login) && isLoginUnique(login, logins))
+    if (!isLoginValid(login)) {
+        alert('ПОМИЛКА! Логін має бути від 4 до 16 символів!');
+        return;
+    }
+    if (!isLoginUnique(logins, login)) {
+        alert('Такий логін вже використовується!');
+        return;
+    }
+    logins.push(login);
+    alert('Ваш логін внесено!');
 };
 
 // Вызовы функции для проверки
 addLogin('Ajax'); // 'Логин успешно добавлен!'
 addLogin('robotGoogles'); // 'Такой логин уже используется!'
 addLogin('Zod'); // 'Ошибка! Логин должен быть от 4 до 16 символов'
-addLogin('jqueryisextremelyfast'); // 'Ошибка! Логин должен быть от 4 до 16 символов'
+addLogin('jqueryisextremelyfast'); // 'Ошибка! Логин должен быть от 4 до 16 символов's
