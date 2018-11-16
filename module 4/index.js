@@ -39,12 +39,12 @@ if (
   }
 
 const countChange = function(totalPrice) {
-  if (customerMoney += totalPrice) {
+  if (customerMoney >= totalPrice) {
     onSuccess();
     return;
   }
 
-  if (customerMoney -= totalPrice) {
+  if (customerMoney <= totalPrice) {
    onError();
     return;
   }
