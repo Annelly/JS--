@@ -8,14 +8,27 @@ const products = {
     {name: 'cheese' , price: 40},
 ],
 };
-function Cashier({ name = 'manager' , productDatabase}) {
+function Cashier(name , productDatabase) {
   this.name = name;
   this.productDatabase = productDatabase;
-}
-const onSuccess = (change) => console.log(`Спасибо за покупку, ваша сдача ${change}!`);
-const onError = () => console.log('Очень жаль, вам не хватает денег на покупки');
-const reset = () => return 0;
 
+  t
+}
+
+const getCustomerMoney = function(value) {
+
+const countTotalPrice = function(order) {
+
+}
+const onSuccess = function(countChange) {
+  console.log(`Спасибо за покупку, ваша сдача ${change}!`);
+}
+const onError = function(countChange) {
+  console.log('Очень жаль, вам не хватает денег на покупки');
+}
+const reset = function(countChange) {
+   return 0;
+}
 const getNumber = function(reset, onError, onSuccess) {
 if (
  typeof onReset !== 'function' ||
@@ -25,24 +38,25 @@ if (
  return;
   }
 
-const getCustomerMoney = function(value) {
-if (customerMoney += totalPrice) {
-  onSuccess();
-  return;
-}
-
-if (customerMoney -= totalPrice) {
- onError();
-  return;
-}
-onReset()
-}
-const countTotalPrice = function(order) {
-
-}
 const countChange = function(totalPrice) {
+  if (customerMoney += totalPrice) {
+    onSuccess();
+    return;
+  }
 
+  if (customerMoney -= totalPrice) {
+   onError();
+    return;
+  }
+  onReset()
+  }
 }
+const order = {
+  bread: 2,
+  milk: 2,
+  apples: 1,
+  cheese: 1
+};
 const mango = new Cashier('Mango', products);
 
 // Проверяем исходные значения полей

@@ -17,7 +17,7 @@ const addLogin = (login) => {
         alert('ПОМИЛКА! Логін має бути від 4 до 16 символів!');
         return;
     }
-    if (!isLoginUnique(logins, login)) {
+    if (isLoginUnique(logins, login)) {
         alert('Такий логін вже використовується!');
         return;
     }
