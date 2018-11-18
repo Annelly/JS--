@@ -29,7 +29,6 @@ const countTotalPrice = function(order) {
         }
     };
 
-}
 const onSuccess = function(countChange) {
   console.log(`Спасибо за покупку, ваша сдача ${change}!`);
 }
