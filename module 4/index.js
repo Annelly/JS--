@@ -1,23 +1,33 @@
 "use strict"
 const products = {
   productDatabase: [
-    {name: 'bread' , price: 10},
-    {name: 'milk' , price: 15},
-    {name: 'apples' , price: 20},
-    {name: 'chicken' , price: 50},
-    {name: 'cheese' , price: 40},
+    {product: 'bread' , price: 10},
+    {product: 'milk' , price: 15},
+    {product: 'apples' , price: 20},
+    {product: 'chicken' , price: 50},
+    {product: 'cheese' , price: 40},
 ],
 };
-function Cashier(name , productDatabase) {
+function Cashier(name , productDatabase, customerMoney) {
   this.name = name;
   this.productDatabase = productDatabase;
+  this.customerMoney = 0;
 
-  t
 }
 
 const getCustomerMoney = function(value) {
+this.customerMoney = value;
+}
 
 const countTotalPrice = function(order) {
+  const keys = Object.keys(order);
+  for (const key in keys) {
+        if(order[product] === productDatabase[product]){
+          const totalPrice = productDatabase[price] * order[amount]
+        }
+      const change = totalPrice - customerMoney;
+        }
+    };
 
 }
 const onSuccess = function(countChange) {
@@ -39,24 +49,24 @@ if (
   }
 
 const countChange = function(totalPrice) {
-  if (customerMoney >= totalPrice) {
+  if (customerMoney >= countTotalPrice) {
     onSuccess();
     return;
   }
 
-  if (customerMoney <= totalPrice) {
+  if (customerMoney <= countTotalPrice) {
    onError();
     return;
   }
   onReset()
   }
 }
-const order = {
-  bread: 2,
-  milk: 2,
-  apples: 1,
-  cheese: 1
-};
+const order = [
+  {product: 'bread', amount: 2},
+  {product: 'milk', amount: 2},
+  {product: 'apples', amount: 1},
+  {product: 'cheese', amount: 1}
+];
 const mango = new Cashier('Mango', products);
 
 // Проверяем исходные значения полей
