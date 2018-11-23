@@ -8,18 +8,18 @@ const products = {
     {product: 'cheese' , price: 40},
 ],
 };
-function Cashier(name , productDatabase, customerMoney) {
+const Cashier = (name , productDatabase, customerMoney) => {
   this.name = name;
   this.productDatabase = productDatabase;
   this.customerMoney = 0;
 
 }
 
-const getCustomerMoney = function(value) {
+const getCustomerMoney = (value) => {
 this.customerMoney = value;
 }
 
-const countTotalPrice = function(order) {
+const countTotalPrice = (order) => {
   const keys = Object.keys(order);
   for (const key in keys) {
         if(order[product] === productDatabase[product]){
@@ -29,16 +29,16 @@ const countTotalPrice = function(order) {
         }
     };
 
-const onSuccess = function(countChange) {
+const onSuccess = (countChange) => {
   console.log(`Спасибо за покупку, ваша сдача ${change}!`);
 }
-const onError = function(countChange) {
+const onError = (countChange) => {
   console.log('Очень жаль, вам не хватает денег на покупки');
 }
-const reset = function(countChange) {
+const reset = (countChange) => {
    return 0;
 }
-const getNumber = function(reset, onError, onSuccess) {
+const getNumber = (reset, onError, onSuccess) => {
 if (
  typeof onReset !== 'function' ||
  typeof onError !== 'function' ||
@@ -47,7 +47,7 @@ if (
  return;
   }
 
-const countChange = function(totalPrice) {
+const countChange = (totalPrice) => {
   if (customerMoney >= countTotalPrice) {
     onSuccess();
     return;
