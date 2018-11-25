@@ -6,8 +6,7 @@ const isLoginValid = (login) => {
 };
 
 const isLoginUnique = (allLogins, login) => {
-    allLogins.includes(login);
-    return login;
+    return logins.includes(login);
 };
 
 const addLogin = (login) => {

@@ -8,58 +8,49 @@ const products = {
     {product: 'cheese' , price: 40},
 ],
 };
-const Cashier = (name , productDatabase, customerMoney) => {
+const Cashier = function(name , productDatabase, customerMoney) {
   this.name = name;
   this.productDatabase = productDatabase;
   this.customerMoney = 0;
+  this.getCustomerMoney = customerMoney;
+  this.countTotalPrice = order;
+  this.onSuccess = onSuccess;
+  this.onError = onError;
+  this.countChange = totalPrice;
 
-}
-
-const getCustomerMoney = (value) => {
-this.customerMoney = value;
-}
-
-const countTotalPrice = (order) => {
-  const keys = Object.keys(order);
-  for (const key in keys) {
-        if(order[product] === productDatabase[product]){
-          const totalPrice = productDatabase[price] * order[amount]
-        }
-      const change = totalPrice - customerMoney;
-        }
-    };
-
-const onSuccess = (countChange) => {
-  console.log(`Спасибо за покупку, ваша сдача ${change}!`);
-}
-const onError = (countChange) => {
-  console.log('Очень жаль, вам не хватает денег на покупки');
-}
-const reset = (countChange) => {
-   return 0;
-}
-const getNumber = (reset, onError, onSuccess) => {
-if (
- typeof onReset !== 'function' ||
- typeof onError !== 'function' ||
- typeof onSuccess !== 'function'
- ) {
- return;
+  const getCustomerMoney = (value) => {
+  this.customerMoney = value;
   }
 
-const countChange = (totalPrice) => {
-  if (customerMoney >= countTotalPrice) {
-    onSuccess();
-    return;
-  }
+  const countTotalPrice = (order) => {
+    const keys = Object.keys(order);
+    for (const key in keys) {
+          if(order[product] === productDatabase[product]){
+            const totalPrice = productDatabase[price] * order[amount]
+          }
+        const change = totalPrice - customerMoney;
+          }
+      };
 
-  if (customerMoney <= countTotalPrice) {
-   onError();
-    return;
+  const onSuccess = (countChange) => {
+    console.log(`Спасибо за покупку, ваша сдача ${change}!`);
   }
-  onReset()
+  const onError = (countChange) => {
+    console.log('Очень жаль, вам не хватает денег на покупки');
   }
-}
+  const countChange = (totalPrice) => {
+    if (customerMoney >= countTotalPrice) {
+      onSuccess();
+      return;
+    }
+
+    if (customerMoney <= countTotalPrice) {
+     onError();
+      return;
+    }
+  }
+};
+
 const order = [
   {product: 'bread', amount: 2},
   {product: 'milk', amount: 2},
