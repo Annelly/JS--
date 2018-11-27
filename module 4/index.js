@@ -12,11 +12,7 @@ const Cashier = function(name , productDatabase, customerMoney) {
   this.name = name;
   this.productDatabase = productDatabase;
   this.customerMoney = 0;
-  this.getCustomerMoney = customerMoney;
-  this.countTotalPrice = order;
-  this.onSuccess = onSuccess;
-  this.onError = onError;
-  this.countChange = totalPrice;
+
 
   const getCustomerMoney = (value) => {
   this.customerMoney = value;
@@ -43,7 +39,9 @@ const Cashier = function(name , productDatabase, customerMoney) {
       onSuccess();
       return;
     }
-
+  const reset = (countChange) => {
+   return 0;
+}
     if (customerMoney <= countTotalPrice) {
      onError();
       return;
