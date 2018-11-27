@@ -39,13 +39,15 @@ const Cashier = function(name , productDatabase, customerMoney) {
       onSuccess();
       return;
     }
-  const reset = (countChange) => {
-   return 0;
-}
+
     if (customerMoney <= countTotalPrice) {
      onError();
       return;
     }
+
+    const reset = (countChange) => {
+   return 0;
+}
   }
 };
 
