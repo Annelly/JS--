@@ -22,9 +22,9 @@ const Cashier = function(name , productDatabase, customerMoney) {
     const keys = Object.keys(order);
     for (const key in keys) {
           if(order[product] === productDatabase[product]){
-            const totalPrice = productDatabase[price] * order[amount]
+            const summ = productDatabase[price] * order[amount]
           }
-        const change = totalPrice - customerMoney;
+        const result = totalPrice - customerMoney;
           }
       };
 
@@ -34,13 +34,13 @@ const Cashier = function(name , productDatabase, customerMoney) {
   const onError = (countChange) => {
     console.log('Очень жаль, вам не хватает денег на покупки');
   }
-  const countChange = (totalPrice) => {
-    if (customerMoney >= countTotalPrice) {
+  const countChange = (summ) => {
+    if (customerMoney >= result) {
       onSuccess();
       return;
     }
 
-    if (customerMoney <= countTotalPrice) {
+    if (customerMoney <= result) {
      onError();
       return;
     }
