@@ -24,18 +24,19 @@ const Cashier = function(name , productDatabase, customerMoney) {
           if(order[product] === productDatabase[product]){
             this.totalPrice = () => {
               return productDatabase[price] * order[amount]
+            }
           }
         }
-      }
-
       }
 
   this.onSuccess = (countChange) => {
     console.log(`Спасибо за покупку, ваша сдача ${change}!`);
   }
+
   this.onError = (countChange) => {
     console.log('Очень жаль, вам не хватает денег на покупки');
   }
+
   this.countChange = (totalPrice) => {
     if (customerMoney >= totalPrice) {
       onSuccess();
