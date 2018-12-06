@@ -47,7 +47,7 @@ const Cashier = function(name , productDatabase, customerMoney) {
      onError();
       return;
     }
-   this reset = (countChange) => {
+   this.reset = (countChange) => {
     return 0;
    }
     this.change = () => {
