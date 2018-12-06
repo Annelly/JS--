@@ -14,40 +14,44 @@ const Cashier = function(name , productDatabase, customerMoney) {
   this.customerMoney = 0;
 
 
-  const getCustomerMoney = (value) => {
+  this.getCustomerMoney = (value) => {
   this.customerMoney = value;
   }
 
-  const countTotalPrice = (order) => {
+  this.countTotalPrice = (order) => {
     const keys = Object.keys(order);
     for (const key in keys) {
           if(order[product] === productDatabase[product]){
-            const summ = productDatabase[price] * order[amount]
+            this.totalPrice = () => {
+              return productDatabase[price] * order[amount]
           }
-        const result = totalPrice - customerMoney;
-          }
-      };
+        }
+      }
 
-  const onSuccess = (countChange) => {
+      }
+
+  this.onSuccess = (countChange) => {
     console.log(`Спасибо за покупку, ваша сдача ${change}!`);
   }
-  const onError = (countChange) => {
+  this.onError = (countChange) => {
     console.log('Очень жаль, вам не хватает денег на покупки');
   }
-  const countChange = (summ) => {
-    if (customerMoney >= result) {
+  this.countChange = (totalPrice) => {
+    if (customerMoney >= totalPrice) {
       onSuccess();
       return;
     }
 
-    if (customerMoney <= result) {
+    if (customerMoney <= totalPrice) {
      onError();
       return;
     }
-
-    const reset = (countChange) => {
-   return 0;
-}
+   this reset = (countChange) => {
+    return 0;
+   }
+    this.change = () => {
+   return totalPrice - customerMoney;
+   }
   }
 };
 
