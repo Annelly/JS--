@@ -1,0 +1,26 @@
+.uniq{
+    margin-top: 30px;
+
+  }
+.preview{
+    list-style: none;
+    display: flex;
+}
+
+.preview > li{
+    width: 150px;
+    height: 150px;
+    margin-left: 10px;
+}
+
+.fullview{
+    max-width: 600px;
+    max-height: 600px
+}
+img{
+    width: 100%;
+    height: auto;
+}
+.red{
+    color: red
+}
